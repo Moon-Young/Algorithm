@@ -1,0 +1,26 @@
+### reduce(0,+) 기능이 있는지 몰랐지,,,;;;
+### 나누기할때는 Double / Double를 해야 정상적으로 값이 나옴, Int로 하면 절삭됨.
+
+
+# 평균 구하기
+
+
+
+
+
+<pre>
+<code>
+func solution(_ arr:[Int]) -> Double {
+ 
+    var sumArr = 0
+    
+    for i in 0..<arr.count {
+        
+        sumArr += arr[i]
+        
+    }
+    
+    return Double(sumArr) / Double(arr.count)
+}
+</pre>
+</code>
