@@ -42,7 +42,7 @@ func solution(_ record:[String]) -> [String] {
         }
     }
     
-    for i in 0..<answer.count {
+    for i in 0..'<'answer.count {
         confirm.append("\(userNick[userId[i]]!)\(answer[i])")
     }
     return confirm
