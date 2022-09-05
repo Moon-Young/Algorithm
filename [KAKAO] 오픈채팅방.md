@@ -1,4 +1,4 @@
-## 
+### Solution 1 - 실패라서 ,,,Fomagran님꺼를 참고해서 하니까 가독성도,,이해도 엄처 잘됨,,,solution 2
 
 
 # [KAKAO] 오픈채팅방
@@ -6,20 +6,63 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/42888
 <img width="661" alt="image" src="https://user-images.githubusercontent.com/29904301/188076146-75de019e-a61e-4f7a-a2d4-18f683cba57a.png">
 
-## Solution 1
+## Solution 2
 
 <pre>
 <code>
+func solution(_ record:[String]) -> [String] {
+  
+    var userId:[String] = [String]()
+    var userNick:[String:String] = [String:String]()
+    var answer:[String] = [String]()
+    var confirm:[String] = [String]()
+    
+    for r in record {
+        
+        let split = r.components(separatedBy: " ")
+        
+        if split[0] == "Enter" {
+            
+            answer.append("님이 들어왔습니다.")
+            
+            userNick[split[1]] = split[2]
+            
+            userId.append(split[1])
+            
+            
+        } else if split[0] == "Leave" {
+            
+            answer.append("님이 나갔습니다.")
+            userId.append(split[1])
+            
+        } else if split[0] == "Change" {
+            
+            userNick[split[1]] = split[2]
+            
+        }
+    }
+    
+    for i in 0..<answer.count {
+        confirm.append("\(userNick[userId[i]]!)\(answer[i])")
+    }
+    return confirm
+}
 
-import Foundation
+solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
+</code>
+</pre>
 
+
+## Solution 1 - 실패,,,,,,
+
+<pre>
+<code>
 func solution(_ record:[String]) -> [String] {
     
 //    var dict:[[String]] = Array()
 //    var setId: [[String]] = Array(repeating: [], count: record.count)
 //    var recordLog: [String] = Array()
 //    solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
-    
     
     
 //    user log 공백으로 나눈후 배열처리
@@ -120,3 +163,5 @@ func step4 (newId:[[String]], confirmId: Dictionary<String, String>)->([String])
 }
 </code>
 </pre>
+
+
