@@ -40,6 +40,7 @@ func solution(_ s:String) -> Int {
     }
     return Int(str)!
 }
-</pre>
+
 </code>
+</pre>
 
