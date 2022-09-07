@@ -23,8 +23,9 @@ func solution(_ x:Int, _ n:Int) -> [Int64] {
     }
     return result
 }
-</pre>
+
 </code>
+</pre>
 
 ## Solution 2
 <pre>
@@ -34,8 +35,9 @@ func solution(_ x:Int, _ n:Int) -> [Int64] {
   return Array(1...n).map{ Int64($0 * x) }
 
 }
-</pre>
+
 </code>
+</pre>
 
 <img width="918" alt="image" src="https://user-images.githubusercontent.com/29904301/185754691-9e9cd354-dcdb-4f10-b92a-214d145d2234.png">
 
